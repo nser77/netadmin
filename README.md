@@ -39,8 +39,9 @@ root@ubuntu:/opt/netadmin# adduser --system --group --home /opt/netadmin/netadmi
 root@ubuntu:/opt/netadmin# chown -R netadmin: /opt/netadmin
 ```
 
-Create system's unit links:
+Create system's links:
 ```
+root@ubuntu:/opt/netadmin# ln -s /opt/netadmin/etc/cron.d/* /etc/cron.d/
 root@ubuntu:/opt/netadmin# ln -s /opt/netadmin/etc/systemd/system/* /etc/systemd/system/
 root@ubuntu:/opt/netadmin# ln -s /opt/netadmin/etc/default/* /etc/default/
 root@ubuntu:/opt/netadmin# ln -s /opt/netadmin/etc/tmpfiles.d/* /etc/tmpfiles.d/
@@ -49,13 +50,8 @@ root@ubuntu:/opt/netadmin# systemctl enable netadmin-beat
 ```
 
 ## Update MaxMind address list
-After the installation, you may want to run your first MaxMind Update on the Producer side:
+After the installation, you may want to manually run your first MaxMind Update on the Producer side:
 ```
 root@ubuntu:/opt/netadmin# cd /opt/netadmin/netadmin
 root@ubuntu:/opt/netadmin/netadmin# ../venv/bin/python manage.py updateMaxMind
-```
-
-Then, you may want to setup a cron:
-```
-root@ubuntu:/opt/netadmin/netadmin# echo '30 3 * * 0 root cd /opt/netadmin/netadmin && ../venv/bin/python manage.py updateMaxMind' > /etc/cron.d/netadmin-updateMM
 ```
