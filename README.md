@@ -47,3 +47,10 @@ root@ubuntu:/opt/netadmin# ln -s /opt/netadmin/etc/tmpfiles.d/* /etc/tmpfiles.d/
 root@ubuntu:/opt/netadmin# systemctl enable netadmin
 root@ubuntu:/opt/netadmin# systemctl enable netadmin-beat
 ```
+
+## Update MaxMind address list
+After the installation, you may want to run your first MaxMind Update on the Producer side:
+```
+root@ubuntu:/opt/netadmin# cd /opt/netadmin/netadmin
+root@ubuntu:/opt/netadmin/netadmin# ../venv/bin/python manage.py updateMaxMind
+```
