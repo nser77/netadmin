@@ -6,7 +6,7 @@ A little unuseful project.
 
 NETADMIN is an admin tool written in Python/Django that allow the administrator to centralize GeoIP address list and distribute it through a Producer/Consumer architecture.
 
-Both Producer and Consumer uses a MaxMind free account to download and store the address list.
+Both Producer and Consumer uses a MaxMind free account to download and store the address list and the IPs provided by MaxMind.
 On Producer side, please set your MaxMind download key into: ```netadmin/netadmin/geoip/maxmind/conf.json```
 
 Each Consumer must download and store the IPs of each address list and update them through cron.
