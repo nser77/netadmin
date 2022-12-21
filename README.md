@@ -54,3 +54,8 @@ After the installation, you may want to run your first MaxMind Update on the Pro
 root@ubuntu:/opt/netadmin# cd /opt/netadmin/netadmin
 root@ubuntu:/opt/netadmin/netadmin# ../venv/bin/python manage.py updateMaxMind
 ```
+
+Then, you may want to setup a cron:
+```
+root@ubuntu:/opt/netadmin/netadmin# echo '30 3 * * 0 root cd /opt/netadmin/netadmin && ../venv/bin/python manage.py updateMaxMind' > /etc/cron.d/netadmin-updateMM
+```
