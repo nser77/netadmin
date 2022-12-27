@@ -46,9 +46,9 @@ root@ubuntu:/opt/netadmin# chown -R netadmin: /opt/netadmin
 Create system's links:
 ```
 root@ubuntu:/opt/netadmin# ln -s /opt/netadmin/etc/cron.d/* /etc/cron.d/
-root@ubuntu:/opt/netadmin# ln -s /opt/netadmin/etc/systemd/system/* /etc/systemd/system/
 root@ubuntu:/opt/netadmin# ln -s /opt/netadmin/etc/default/* /etc/default/
 root@ubuntu:/opt/netadmin# ln -s /opt/netadmin/etc/tmpfiles.d/* /etc/tmpfiles.d/
+root@ubuntu:/opt/netadmin# cp -vf /opt/netadmin/etc/systemd/system/* /etc/systemd/system/
 root@ubuntu:/opt/netadmin# systemctl enable netadmin
 root@ubuntu:/opt/netadmin# systemctl enable netadmin-beat
 ```
