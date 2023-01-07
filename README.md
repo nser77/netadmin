@@ -62,6 +62,11 @@ Create Django Superuser:
 root@jammy:/opt/netadmin/netadmin# ../venv/bin/python manage.py createsuperuser
 ```
 
+Set your MaxMind Download Key: 
+```
+root@jammy:/opt/netadmin/netadmin# echo "{\"download_key\":\"<your-key>\"}" > geoip/maxmind/conf.json
+```
+
 ## Update MaxMind address list
 After the installation, you may want to manually run your first MaxMind Update on the Producer side:
 ```
