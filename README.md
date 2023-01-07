@@ -48,9 +48,18 @@ Create system's links:
 root@ubuntu:/opt/netadmin# ln -s /opt/netadmin/etc/cron.d/* /etc/cron.d/
 root@ubuntu:/opt/netadmin# ln -s /opt/netadmin/etc/default/* /etc/default/
 root@ubuntu:/opt/netadmin# ln -s /opt/netadmin/etc/tmpfiles.d/* /etc/tmpfiles.d/
-root@ubuntu:/opt/netadmin# cp -vf /opt/netadmin/etc/systemd/system/* /etc/systemd/system/
-root@ubuntu:/opt/netadmin# systemctl enable netadmin
-root@ubuntu:/opt/netadmin# systemctl enable netadmin-beat
+root@ubuntu:/opt/netadmin# cp -f /opt/netadmin/etc/systemd/system/* /etc/systemd/system/
+```
+
+Migrate Django App:
+```
+root@ubuntu:/opt/netadmin# cd /opt/netadmin/netadmin
+root@jammy:/opt/netadmin/netadmin# ../venv/bin/python manage.py migrate
+```
+
+Create Django Superuser:
+```
+root@jammy:/opt/netadmin/netadmin# ../venv/bin/python manage.py createsuperuser
 ```
 
 ## Update MaxMind address list
